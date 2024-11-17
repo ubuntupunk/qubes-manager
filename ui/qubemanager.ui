@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1100</width>
-    <height>600</height>
+    <width>1808</width>
+    <height>360</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -23,7 +23,8 @@
    <string>Qube Manager</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="qubes-manager"/>
+   <iconset theme="qubes-manager">
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
@@ -47,322 +48,604 @@
    <property name="locale">
     <locale language="English" country="UnitedStates"/>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <property name="sizeConstraint">
-     <enum>QLayout::SetDefaultConstraint</enum>
+   <widget class="QTableView" name="table">
+    <property name="enabled">
+     <bool>true</bool>
     </property>
-    <item row="1" column="0">
-     <widget class="QTableView" name="table">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="sizeIncrement">
-       <size>
-        <width>200</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::CustomContextMenu</enum>
-      </property>
-      <property name="acceptDrops">
-       <bool>false</bool>
-      </property>
-      <property name="lineWidth">
-       <number>0</number>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-      <property name="alternatingRowColors">
-       <bool>true</bool>
-      </property>
-      <property name="selectionMode">
-       <enum>QAbstractItemView::ExtendedSelection</enum>
-      </property>
-      <property name="selectionBehavior">
-       <enum>QAbstractItemView::SelectRows</enum>
-      </property>
-      <property name="showGrid">
-       <bool>false</bool>
-      </property>
-      <property name="gridStyle">
-       <enum>Qt::NoPen</enum>
-      </property>
-      <property name="sortingEnabled">
-       <bool>true</bool>
-      </property>
-      <property name="cornerButtonEnabled">
-       <bool>false</bool>
-      </property>
-      <attribute name="horizontalHeaderCascadingSectionResizes">
-       <bool>false</bool>
-      </attribute>
-      <attribute name="verticalHeaderVisible">
-       <bool>false</bool>
-      </attribute>
-      <attribute name="verticalHeaderCascadingSectionResizes">
-       <bool>false</bool>
-      </attribute>
-      <row>
-       <property name="text">
-        <string>Nowy wiersz</string>
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>40</y>
+      <width>1231</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>200</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ExtendedSelection</enum>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+    <property name="showGrid">
+     <bool>false</bool>
+    </property>
+    <property name="gridStyle">
+     <enum>Qt::NoPen</enum>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="cornerButtonEnabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <addaction name="action_scroll_to_top"/>
+    <addaction name="action_scroll_to_bottom"/>
+   </widget>
+   <widget class="QFrame" name="mainContainer">
+    <property name="geometry">
+     <rect>
+      <x>1250</x>
+      <y>40</y>
+      <width>461</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QFrame" name="systemInfoFrame">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>0</height>
+        </size>
        </property>
-      </row>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <column>
-       <property name="text">
-        <string/>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 1px solid #dee2e6;
+border-radius: 4px;</string>
        </property>
-      </column>
-      <column>
-       <property name="text">
-        <string/>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
        </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Name</string>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
        </property>
-       <property name="toolTip">
-        <string>The name of each qube</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>State</string>
-       </property>
-       <property name="toolTip">
-        <string>The running state and update status of each qube</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Template</string>
-       </property>
-       <property name="toolTip">
-        <string>The template on which each qube is based</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Net qube</string>
-       </property>
-       <property name="toolTip">
-        <string>The qube that provides network access to each qube</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Disk
-usage</string>
-       </property>
-       <property name="toolTip">
-        <string>The amount of disk space used by each qube</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Internal</string>
-       </property>
-       <property name="toolTip">
-        <string>Whether each qube is internal to the operation of the system and not intended for normal use by end users</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>IP Address</string>
-       </property>
-       <property name="toolTip">
-        <string>The internal IP address assigned to each qube</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Include
-in backups</string>
-       </property>
-       <property name="toolTip">
-        <string>Whether each qube is included in backups by default</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Last backup</string>
-       </property>
-       <property name="toolTip">
-        <string>Timestamp indicating the last time at which each qube was backed up</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Default disposable
-template</string>
-       </property>
-       <property name="toolTip">
-        <string>The disposable template used by default when launching disposables from each qube</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Disposable
-template</string>
-       </property>
-       <property name="toolTip">
-        <string>Whether each qube is itself a disposable template</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Virtualization mode</string>
-       </property>
-       <property name="toolTip">
-        <string>The hypervisor mode used when running each qube as a virtual machine</string>
-       </property>
-      </column>
-      <addaction name="action_scroll_to_top"/>
-      <addaction name="action_scroll_to_bottom"/>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <layout class="QHBoxLayout" name="searchContainer">
-      <property name="spacing">
-       <number>6</number>
-      </property>
-      <property name="leftMargin">
-       <number>6</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="systemInfoHeader">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>10</y>
+          <width>201</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="text">
-         <string>Search:</string>
+         <string>System Information</string>
         </property>
        </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="show_label">
-        <property name="text">
-         <string>Show:</string>
+       <widget class="QFrame" name="infoContentFrame">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>421</width>
+          <height>161</height>
+         </rect>
         </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="leftMargin" stdset="0">
+         <string>10</string>
+        </property>
+        <property name="rightMargin" stdset="0">
+         <number>10</number>
+        </property>
+        <property name="bottomMargin" stdset="0">
+         <number>10</number>
+        </property>
+        <property name="topMargin" stdset="0">
+         <number>10</number>
+        </property>
+        <widget class="QFrame" name="updateStatusFrame">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>60</y>
+           <width>211</width>
+           <height>101</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+border: 1px solid #dee2e6;
+border-radius: 4px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="leftMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="rightMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="bottomMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="topMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="spacing" stdset="0">
+          <number>8</number>
+         </property>
+         <widget class="QLabel" name="updateStatusHeader">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>0</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-weight: bold;
+color: #495057;
+font-size: 13px;
+padding-bottom: 8px;</string>
+          </property>
+          <property name="text">
+           <string>Update Status</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="updateStatusContent">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>191</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QFrame" name="systemStatsFrame">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>421</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-weight: bold;
+color: #495057;
+font-size: 13px;
+padding-bottom: 8px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="topMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="bottomMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="leftMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="rightMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="spacing" stdset="0">
+          <number>0</number>
+         </property>
+         <widget class="QLabel" name="systemStatsHeader">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>0</y>
+            <width>131</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-weight: bold;
+color: #495057;
+font-size: 13px;
+padding-bottom: 8px;</string>
+          </property>
+          <property name="text">
+           <string>System Statistics</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="memoryUsageLabel">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>26</y>
+            <width>141</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-weight: bold;
+color: #495057;
+font-size: 13px;
+padding-bottom: 8px;</string>
+          </property>
+          <property name="text">
+           <string>Memory Usage</string>
+          </property>
+          <property name="leftMargin" stdset="0">
+           <number>12</number>
+          </property>
+          <property name="rightMargin" stdset="0">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin" stdset="0">
+           <number>12</number>
+          </property>
+          <property name="topMargin" stdset="0">
+           <number>12</number>
+          </property>
+          <property name="spacing" stdset="0">
+           <number>8</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="cpuUsageLabel">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>0</y>
+            <width>91</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-weight: bold;
+color: #495057;
+font-size: 13px;
+padding-bottom: 8px;</string>
+          </property>
+          <property name="text">
+           <string>CPU Usage</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="storageUsageLabel">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>30</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-weight: bold;
+color: #495057;
+font-size: 13px;
+padding-bottom: 8px;</string>
+          </property>
+          <property name="text">
+           <string>Storage Usage</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QFrame" name="securityWarningsFrame">
+         <property name="geometry">
+          <rect>
+           <x>209</x>
+           <y>59</y>
+           <width>211</width>
+           <height>101</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+border: 1px solid #dee2e6;
+border-radius: 4px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="topMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="bottomMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="leftMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="rightMargin" stdset="0">
+          <number>12</number>
+         </property>
+         <property name="spacing" stdset="0">
+          <number>8</number>
+         </property>
+         <widget class="QLabel" name="securityWarningsHeader">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>-4</y>
+            <width>131</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-weight: bold;
+color: #495057;
+font-size: 13px;
+padding-bottom: 8px;</string>
+          </property>
+          <property name="text">
+           <string>Security Warnings</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="securityWarningsContent">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>191</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
        </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="show_running">
-        <property name="text">
-         <string>Running</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="show_halted">
-        <property name="text">
-         <string>Halted</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="show_network">
-        <property name="text">
-         <string>Network</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="show_templates">
-        <property name="text">
-         <string>Templates</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="show_standalone">
-        <property name="text">
-         <string>Standalone</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="show_user">
-        <property name="text">
-         <string>User qubes</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-        <property name="toolTip">
-         <string>Show AppVMs and Standalone VMs, hide disposable and service VMs</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="show_all">
-        <property name="text">
-         <string>All</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-   </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <layout class="QHBoxLayout" name="searchContainer">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="leftMargin">
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Search:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="show_label">
+       <property name="text">
+        <string>Show:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="show_running">
+       <property name="text">
+        <string>Running</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="show_halted">
+       <property name="text">
+        <string>Halted</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="show_network">
+       <property name="text">
+        <string>Network</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="show_templates">
+       <property name="text">
+        <string>Templates</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="show_standalone">
+       <property name="text">
+        <string>Standalone</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="show_user">
+       <property name="toolTip">
+        <string>Show AppVMs and Standalone VMs, hide disposable and service VMs</string>
+       </property>
+       <property name="text">
+        <string>User qubes</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="show_all">
+       <property name="text">
+        <string>All</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1100</width>
-     <height>24</height>
+     <width>1808</width>
+     <height>22</height>
     </rect>
    </property>
    <property name="contextMenuPolicy">
@@ -495,11 +778,11 @@ template</string>
    <property name="text">
     <string>&amp;New qube</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+N</string>
-   </property>
    <property name="toolTip">
     <string>Create a new qube</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
   <action name="action_removevm">
@@ -818,7 +1101,8 @@ template</string>
   </action>
   <action name="action_about_qubes">
    <property name="icon">
-    <iconset theme="qubes-manager"/>
+    <iconset theme="qubes-manager">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>&amp;Qubes OS</string>

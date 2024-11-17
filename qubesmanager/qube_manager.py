@@ -57,6 +57,7 @@ from qubesmanager import log_dialog
 from qubesmanager import utils as manager_utils
 from qubesmanager import common_threads
 from qubesmanager import clone_vm
+from qubesmanager.system_info import SystemInfoUpdater
 
 # this is needed for icons to actually work
 # pylint: disable=unused-import, no-name-in-module
@@ -903,6 +904,9 @@ class VmManagerWindow(ui_qubemanager.Ui_VmManagerWindow, QMainWindow):
         self.size_on_disk_timer.setInterval(1000 * 60 * 5)  # every 5 mins
         self.size_on_disk_timer.start()
 
+        # Initialize system info updater
+        self.system_info_updater = SystemInfoUpdater(self)
+
     def eventFilter(self, _object, event):
         ''' refresh disk usage every 60s if focused & every 5m in background '''
         if event.type() == QEvent.Type.WindowActivate:
@@ -988,7 +992,6 @@ class VmManagerWindow(ui_qubemanager.Ui_VmManagerWindow, QMainWindow):
         for error in errors:
             QMessageBox.warning(self, self.tr("{0} network change failed!")
                     .format(error[0]), error[1])
-
 
     def __init_context_menu(self):
         self.context_menu = QMenu(self)
